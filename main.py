@@ -1,12 +1,25 @@
 class Person:
+    def __init__(self, first_name, last_name, age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
     
-    def __init__(self,fname,lname) -> None:
-        self.fname = fname
-        self.lname = lname
-        
-    def __str__(self) -> str:
-        return f'hello {self.fname} {self.lname}'
+    def __repr__(self) -> str:
+        return f'person {self.first_name} {self.last_name} {self.age}'
     
-arun = Person('arun','deepak')
+    def __eq__(self, other) -> bool:
+         return self.age == other.age , self.last_name == other.last_name , \
+         self.first_name == other.first_name
+         
+    
 
-print(arun)
+                
+                
+        
+arun  = Person('arun','deepak',31)
+kali = Person('kali','deepak',31)
+
+print(arun == kali)
+
+
+
