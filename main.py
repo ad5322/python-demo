@@ -1,25 +1,21 @@
+from pprint import pprint
+
 class Person:
-    def __init__(self, first_name, last_name, age):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
+    def __init__(self,name) -> None:
+        self.name = name
+  
+    def greet(self):
+        return f'hello, it\'s {self.name}'
     
-    def __repr__(self) -> str:
-        return f'person {self.first_name} {self.last_name} {self.age}'
-    
-    def __eq__(self, other) -> bool:
-         return self.age == other.age , self.last_name == other.last_name , \
-         self.first_name == other.first_name
-         
-    
-
-                
-                
+class Employee(Person):
+    def __init__(self, name,job_title) -> None:
+        super().__init__(name)
+        self.job_title = job_title
         
-arun  = Person('arun','deepak',31)
-kali = Person('kali','deepak',31)
 
-print(arun == kali)
+new_employee = Employee('arun','python developer')
+
+pprint(new_employee.greet())
 
 
 
