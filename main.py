@@ -1,21 +1,15 @@
 from pprint import pprint
 
-class Person:
-    def __init__(self,name) -> None:
+
+class Employee:
+    def __init__(self, name,base_pay,bonus) -> None:
         self.name = name
-  
-    def greet(self):
-        return f'hello, it\'s {self.name}'
+        self.base_pay = base_pay
+        self.bonus = bonus
     
-class Employee(Person):
-    def __init__(self, name,job_title) -> None:
-        super().__init__(name)
-        self.job_title = job_title
-        
+    def get_pay(self):
+        return self.base_pay + self.bonus    
 
-new_employee = Employee('arun','python developer')
-
-pprint(new_employee.greet())
 
 
 
