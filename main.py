@@ -8,8 +8,5 @@ def main():
         print(i)
         i += 1
         
-my_name = 'arun'
-my_name = "deepak"
-my_name = """Hello world hello is there anything"""
-        
-pprint(my_name)
+message = 'Good Morning'
+print(message)
