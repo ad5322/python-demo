@@ -2,14 +2,13 @@ import keyword
 from pprint import pprint
 import random
 
-# price = input('enter net price ($) \n')
-# tax = input('enter net tax (%) \n')
+x = int(input('enter your age \n'))
 
-# tax_amount = int(price) * int(tax) / 100
+if x <= 5:
+    ticket_price = 5
+elif (x > 5 and x < 25):
+    ticket_price = 25
+else:
+    ticket_price = 30
 
-# print(f'the tax amount is {tax_amount}% ')
-
-
-x = random.randrange(1,100)
-y = int(input('Enter a number'))
-
+print(f'your ticket price is ${ticket_price}')

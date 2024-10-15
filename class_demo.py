@@ -1,14 +1,19 @@
 from pprint import pprint
 
-class Person:
-    pass
+class Htmldocument:
     
-    # def __init__(self,name,age):
-    #     self.name = name
-    #     self.age = age
+    def __init__(self,extension = 'HTML8',version = 5.0):
+        self.ext = extension
+        self.ver = version
         
-if __name__ == '__main__':
-    # x = Person('arun',78)
-    x = Person()
-    # print(f'{x.name} {x.age}')
-    print(x.__dict__)
+    def content(self):
+        return f'{self.ext} {self.ver} here is some content'
+    
+    @classmethod
+    def anon(cls):
+        return Htmldocument('javascript',10)
+    
+x = Htmldocument()
+print(x.content())
+anon = Htmldocument.anon()
+print(anon.content())
