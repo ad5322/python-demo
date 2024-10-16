@@ -1,19 +1,21 @@
 from pprint import pprint
 
-class Htmldocument:
+class counter:
+    def __init__(self):
+        self.__current = 0
     
-    def __init__(self,extension = 'HTML8',version = 5.0):
-        self.ext = extension
-        self.ver = version
+    def increment(self):
+        self.__current += 1
         
-    def content(self):
-        return f'{self.ext} {self.ver} here is some content'
-    
-    @classmethod
-    def anon(cls):
-        return Htmldocument('javascript',10)
-    
-x = Htmldocument()
-print(x.content())
-anon = Htmldocument.anon()
-print(anon.content())
+    def value(self):
+        return self.__current
+        
+    def reset(self):
+        self.__current = 0
+        
+c = counter()
+c.increment()
+c.increment()
+print(c.value())
+c._counter__current = -999
+print(c._counter__current)
