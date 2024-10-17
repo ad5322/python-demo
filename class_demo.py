@@ -1,21 +1,18 @@
 from pprint import pprint
 
-class counter:
-    def __init__(self):
-        self.__current = 0
+class TempratureConverter:
+    KELVIN = '*K'
     
-    def increment(self):
-        self.__current += 1
-        
-    def value(self):
-        return self.__current
-        
-    def reset(self):
-        self.__current = 0
-        
-c = counter()
-c.increment()
-c.increment()
-print(c.value())
-c._counter__current = -999
-print(c._counter__current)
+    @staticmethod
+    def celsius_to_kelvin(c):
+        return c + 273.15
+    
+    @staticmethod
+    def format(value,unit):
+        symbol = ''
+        if unit == TempratureConverter.KELVIN:
+            symbol = 'Ak5322'
+        return f'{value} {symbol}'
+    
+c = TempratureConverter.celsius_to_kelvin(37)
+print(TempratureConverter.format(c,TempratureConverter.KELVIN))
