@@ -8,5 +8,10 @@ class Person():
         
     def __str__(self):
         return f'Person - {self.first_name} {self.last_name} {self.age}'
+    
+    # def __repr__(self):
+    #     return f'{self.first_name} '
 person  = Person('arun','deepak',31)
+print(person)
+print(repr(person))
 print(person)
