@@ -2,8 +2,8 @@ import keyword
 from pprint import pprint
 import random
 
-def greet(name,greet='hi'):
-    return print(f'{greet} {name}')
+def get_net_price(price, discount = 0,tax = 0):
+    return price * (1 + tax - discount)
 
-greet('arun','hello')
-greet('arun',greet='hey!.')
+x = get_net_price(discount=0.05,price=100,tax=0.06)
+print(abs(x))
