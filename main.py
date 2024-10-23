@@ -2,8 +2,18 @@ import keyword
 from pprint import pprint
 import random
 
-def get_net_price(price, discount = 0,tax = 0):
-    return price * (1 + tax - discount)
+def sum(n):
+    return n + sum(n-1) if n > 0 else 0
+      
+    
+print(sum(100))
 
-x = get_net_price(discount=0.05,price=100,tax=0.06)
-print(abs(x))
+    
+# def sum(x):    
+#     total = 0
+#     for y in range(x+1):
+#         total = y + total
+    
+#     return total
+
+# print(sum(100))
