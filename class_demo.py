@@ -1,25 +1,17 @@
 from pprint import pprint
 
-class Person():
-    def __init__(self,name,age):
+class Item:
+    def __init__(self,name,qty,price):
         self.name = name
-        self.age = age
+        self.qty = qty
+        self.price = price
         
-    def __bool__(self):
-        if self.age < 18 or self.age > 65:
-            return False
-        return True
+    @property
+    def amount(self):
+        return self.price * self.qty
     
-    def __repr__(self):
-        
-        return f'{self.name} {self.age}'
+    def __str__(self):
+        return f'{self.name} {self.qty} ${self.price} ${self.amount}'
     
-
-
+class Cart:
     
-p1 = Person('jane',22)
-p2 = Person('john',85)
-p1.name = 'arun'
-print(p1)
-
-print(bool(p2))
