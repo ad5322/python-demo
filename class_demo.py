@@ -1,17 +1,26 @@
 from pprint import pprint
 
-class Item:
-    def __init__(self,name,qty,price):
-        self.name = name
-        self.qty = qty
-        self.price = price
-        
+class Person:
+    def __init__(self,name,age):
+        self._name = name
+        self.age = age
+    
     @property
-    def amount(self):
-        return self.price * self.qty
+    def name(self):
+        return self._name
     
-    def __str__(self):
-        return f'{self.name} {self.qty} ${self.price} ${self.amount}'
+    @name.setter
+    def name(self,value):
+        if value.sttip() == '':
+            raise ValueError('name cannot be empty')
+        self._name = value
     
-class Cart:
-    
+    @name.deleter
+    def name(self):
+        del self._name
+        
+# pprint(Person.__dict__)
+person = Person('arun',31)
+del person._name
+print(person._name)
+pprint(person.__dict__)
