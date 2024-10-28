@@ -6,21 +6,17 @@ body {
     margin: 0;
   }
 
-h1, p {
-    color: purple;
-    background-color: wheat;
-}
-a[href="https://example.com"] {
-    background-color: darkgoldenrod;
-}
-p::first-line{
-    background-color: greenyellow;
-}
-
-article > p {
-    background-color: aqua;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
+  .notebox {
+    border: 4px solid #666;
+    padding: .5em;
+    margin: 0.5rem;
+  }
+  .notebox.danger {
+    border-color: red;
     font-weight: bold;
-    
-}
+  }
+
+  .notebox.warning {
+    border-color: orange;
+    font-weight: bold;
+  }
