@@ -1,43 +1,26 @@
-body{
-    background-color: black;
-    color: white;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1em;
+    margin: 0;
+  }
+
+h1, p {
+    color: purple;
+    background-color: wheat;
 }
-h1{
-    color: red;
-    
+a[href="https://example.com"] {
+    background-color: darkgoldenrod;
 }
-p,li {
-    color: lawngreen;
-}
-ul {
-    list-style-type: none;
-    }
-.special{
-    color:orange;
-    font-weight: bold;
-}
-li em {
-    color: rebeccapurple;
-   
-}
-li em:hover{
-    text-decoration: underline;
+p::first-line{
+    background-color: greenyellow;
 }
 
-a:link {
-    color: pink;
-}
-a:visited {
-    color: rgb(92, 169, 250)
-}
-a:hover {
-    text-decoration: none;
-}
-body h1 + p.special {
-    color: yellow;
-    background-color: rgb(56, 60, 55);
-    padding: 5px;
+article > p {
+    background-color: aqua;
+    padding: 0.5rem;
     border-radius: 0.3rem;
-  }
+    font-weight: bold;
+    
+}
