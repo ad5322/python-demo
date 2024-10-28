@@ -20,3 +20,6 @@ body {
     border-color: orange;
     font-weight: bold;
   }
+  dt,dd{
+    padding: 0.5rem;
+  }
