@@ -1,10 +1,12 @@
 body{
     background-color: black;
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    width: 640px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-size: 1rem;
     margin: auto;
+    
 }
+
 main{
     background-color: rgb(38, 38, 38);
     padding: 0.5rem;
@@ -16,8 +18,7 @@ strong{
     color: rgb(49, 249, 4);
 }
 p{
-    font-size: 1.1rem;
-    
+    color: rgb(255, 255, 255);    
 }
 img{
     border-radius: 0.3rem;
@@ -30,4 +31,7 @@ a{
 hr{
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+h1,h2 {
+    color: rgb(204, 164, 242);
 }
