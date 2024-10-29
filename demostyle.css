@@ -6,20 +6,8 @@ body {
     margin: 0;
   }
 
-  .notebox {
-    border: 4px solid #666;
-    padding: .5em;
-    margin: 0.5rem;
+  article p:first-child::first-line{
+    font-weight: bolder;
+    color: limegreen;
   }
-  .notebox.danger {
-    border-color: red;
-    font-weight: bold;
-  }
-
-  .notebox.warning {
-    border-color: orange;
-    font-weight: bold;
-  }
-  dt,dd{
-    padding: 0.5rem;
-  }
+ 

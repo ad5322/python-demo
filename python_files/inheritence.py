@@ -1,18 +1,29 @@
-class Person:
-    def __init__(self,name):
+class Employee():
+    def __init__(self, name, base_pay, bonus):
         self.name = name
+        self.base_pay = base_pay
+        self.bonus = bonus
         
-    def greet(self):
-        return f'hello {self.name}'
+    def get_pay(self):
+        return self.base_pay + self.bonus
     
-class Employee(Person):
-    def __init__(self,name,job_title):
-        self.name = name
-        self.job_title = job_title
-        
+    def __str__(self):
+        return f'name : {self.name} \nbase_pay : {self.base_pay} \nbonus : {self.bonus} \ntotal : {self.get_pay()}'
+
 class SalesEmployee(Employee):
-    pass
+    def __init__(self, name, base_pay, bonus, sales_incentives):
+        super().__init__(name, base_pay, bonus)  
+        self.sales_incentives = sales_incentives
+        
+    def get_pay(self):
+        return super().get_pay() + self.sales_incentives  
+    
         
     
-arun = Employee('Arun','Web Developer')
-print(arun.greet())
+
+arun = Employee('arun',50000,25000)
+
+x = arun.get_pay()
+print(arun)
+# deepak = SalesEmployee('deepak',50000,10000,25000)
+# print(deepak.get_pay())

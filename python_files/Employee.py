@@ -1,11 +1,8 @@
 from abc import ABC,abstractmethod
 
+names = {
+    'student1':'arun',
+    'student2':'deepak',
+}
 
-class Employee(ABC):
-    def __init__(self,first_name,last_name):
-        self.first_name = first_name
-        self.last_name = last_name
-        
-    @property
-    def full_name(self):
-        return f'{self.first_name} {self.last_name}'
+print(names['student1'])
