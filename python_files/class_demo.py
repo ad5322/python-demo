@@ -1,26 +1,35 @@
 from pprint import pprint
+import re
 
-class Person:
-    def __init__(self,name,age):
-        self._name = name
-        self.age = age
+class Parser:
+    phone_pattern = r'\d{3}-\d{3}-\d{4}'
     
-    @property
-    def name(self):
-        return self._name
-    
-    @name.setter
-    def name(self,value):
-        if value.sttip() == '':
-            raise ValueError('name cannot be empty')
-        self._name = value
-    
-    @name.deleter
-    def name(self):
-        del self._name
+    def __init__(self,text):
+        self.text = text
         
-# pprint(Person.__dict__)
-person = Person('arun',31)
-del person._name
-print(person._name)
-pprint(person.__dict__)
+    def email(self):
+        match = re.search(r'[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+',self.text)
+        if match:
+            return match.group(0)
+        return None
+    
+    def phone(self):
+        match = re.search(self.phone_pattern, self.text)
+        if match:
+            return match.group(0)
+        return None
+    
+    def parse(self):
+        return {
+            'email':self.email(),
+            'phone':self.phone()
+        }
+
+class UKparser(Parser):
+    phone_pattern = r'(\+\d{1}-\d{3}-\d{3}-\d{4})'
+ 
+        
+if __name__ == '__main__':       
+    s = 'Contact us via 408-205-5663 or email@gmail.com'
+    parse = Parser(s)
+    print(parse.parse())
